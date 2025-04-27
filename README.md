@@ -4,7 +4,7 @@
 
 An accelerator to quickly get users up and running using Synapse Link by building D365FO entities back into raw tables in Databricks
 
-[Visit Acrux Digital](https://acruxdigital.tech) | [LinkedIn](https://www.linkedin.com/company/acruxdigital-technology) | [Report Bug](https://github.com/yourusername/repo-name/issues) | [Request Feature](https://github.com/yourusername/repo-name/issues)
+[Visit Acrux Digital](https://acruxdigital.tech) | [LinkedIn](https://www.linkedin.com/company/acruxdigital-technology) | [Report Bug](https://github.com/JPaisley111/databricks-accelerator/issues) | [Request Feature](https://github.com/JPaisley111/databricks-accelerator/issues)
 
 [![LinkedIn][linkedin-shield]][linkedin-url]
 [![MIT License][license-shield]][license-url]
@@ -392,17 +392,17 @@ This accelerator is provided as-is under the MIT License. See `LICENSE` for more
 
 Acrux Digital - [https://acruxdigital.tech](https://acruxdigital.tech)
 
-Project Link: [https://github.com/yourusername/repo-name](https://github.com/yourusername/repo-name)
+Project Link: [https://github.com/JPaisley111/databricks-accelerator](https://github.com/JPaisley111/databricks-accelerator)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/yourusername/repo-name.svg?style=for-the-badge
-[contributors-url]: https://github.com/yourusername/repo-name/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/yourusername/repo-name.svg?style=for-the-badge
-[forks-url]: https://github.com/yourusername/repo-name/network/members
-[issues-shield]: https://img.shields.io/github/issues/yourusername/repo-name.svg?style=for-the-badge
-[issues-url]: https://github.com/yourusername/repo-name/issues
-[license-shield]: https://img.shields.io/github/license/yourusername/repo-name.svg?style=for-the-badge
-[license-url]: https://github.com/yourusername/repo-name/blob/master/LICENSE
+[contributors-shield]: https://img.shields.io/github/contributors/JPaisley111/databricks-accelerator.svg?style=for-the-badge
+[contributors-url]: https://github.com/JPaisley111/databricks-accelerator/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/JPaisley111/databricks-accelerator.svg?style=for-the-badge
+[forks-url]: https://github.com/JPaisley111/databricks-accelerator/network/members
+[issues-shield]: https://img.shields.io/github/issues/JPaisley111/databricks-accelerator.svg?style=for-the-badge
+[issues-url]: https://github.com/JPaisley111/databricks-accelerator/issues
+[license-shield]: https://img.shields.io/github/license/JPaisley111/databricks-accelerator.svg?style=for-the-badge
+[license-url]: https://github.com/JPaisley111/databricks-accelerator/blob/main/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=0077B5
 [linkedin-url]: https://www.linkedin.com/company/acruxdigital/
