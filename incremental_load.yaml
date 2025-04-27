@@ -1,0 +1,56 @@
+###############################################################################
+# incremental_load.yaml
+# Databricks job configuration
+###############################################################################
+
+# Job name that will appear in the Databricks UI
+name: "D365FO Synapse Link - Incremental Load"
+
+# Job schedule using cron expression
+# This runs daily at midnight UTC
+schedule:
+  quartz_cron_expression: "0 0 0 * * ?"
+  timezone_id: "UTC"
+
+# Cluster configuration 
+# This defines the resources and Databricks Runtime version to use
+new_cluster:
+  spark_version: "11.3.x-scala2.12"  # Databricks Runtime version
+  node_type_id: "Standard_DS3_v2"    # VM type for worker nodes (Azure)
+  num_workers: 2                     # Number of worker nodes
+  spark_conf:
+    "spark.databricks.delta.schema.autoMerge.enabled": "true"  # Enable schema evolution
+  
+  # Custom tags for resource tracking and organization
+  custom_tags:
+    project: "d365fo_accelerator"
+    environment: "production"
+    owner: "data_engineering"
+
+# Task definition - this runs a notebook
+tasks:
+  - task_key: "incremental_load_task"
+    # The notebook_task defines which notebook to run 
+    # You'll need to adjust the notebook_path to your environment
+    notebook_task:
+      notebook_path: "/Workspace/Users/your_username/databricks accelerator/main"
+      source: "WORKSPACE"
+    
+    # Optional timeout - stops the task if it runs longer than this
+    timeout_seconds: 7200  # 2 hours
+    
+    # Retry configuration for transient failures
+    retry_on_timeout: true
+    max_retries: 2
+    min_retry_interval_millis: 300000  # 5 minutes
+
+# Email notifications (optional)
+email_notifications:
+  on_success:
+    - data_engineering@yourcompany.com
+  on_failure:
+    - data_engineering@yourcompany.com
+    - alerts@yourcompany.com
+
+# Job description
+description: "This job uses the generic PySpark implementation to incrementally load D365FO entity data via Synapse Link into Delta tables."
