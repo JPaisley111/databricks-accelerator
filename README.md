@@ -1,73 +1,42 @@
-<div align="center">
-  <a href="https://acruxdigital.tech">
-    <img src="https://www.acruxdigital.tech/_next/image?url=%2Flogo-light.png" alt="Logo" width="200" height="80">
-  </a>
+# Databricks D365FO Synapse Link Accelerator
 
-  <h1 align="center">Databricks D365FO Synapse Link Accelerator</h1>
+![Acrux Digital](https://www.acruxdigital.tech/_next/image?url=%2Flogo-light.png)
 
-  <p align="center">
-    An accelerator to quickly get users up and running using Synapse Link by building D365FO entities back into raw tables in Databricks
-    <br />
-    <a href="https://acruxdigital.tech"><strong>Visit Acrux Digital »</strong></a>
-    <br />
-    <br />
-    <a href="https://www.linkedin.com/company/acruxdigital-technology">LinkedIn</a>
-    ·
-    <a href="https://github.com/yourusername/repo-name/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/yourusername/repo-name/issues">Request Feature</a>
-  </p>
-  
-  [![LinkedIn][linkedin-shield]][linkedin-url]
-  [![MIT License][license-shield]][license-url]
-  [![Contributors][contributors-shield]][contributors-url]
-  [![Forks][forks-shield]][forks-url]
-  [![Issues][issues-shield]][issues-url]
-</div>
+An accelerator to quickly get users up and running using Synapse Link by building D365FO entities back into raw tables in Databricks
 
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li><a href="#overview">Overview</a></li>
-    <li><a href="#prerequisites">Prerequisites</a></li>
-    <li>
-      <a href="#quick-deployment">Quick Deployment with Terraform</a>
-      <ul>
-        <li><a href="#terraform-prerequisites">Terraform Prerequisites</a></li>
-        <li><a href="#terraform-deployment">Deployment Process</a></li>
-        <li><a href="#terraform-outputs">Understanding Outputs</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#implementation-options">Implementation Options</a>
-      <ul>
-        <li><a href="#generic-pyspark-implementation">Generic PySpark Implementation</a></li>
-        <li><a href="#databricks-auto-loader-implementation">Databricks Auto Loader Implementation</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#running-on-databricks">Running on Databricks</a>
-      <ul>
-        <li><a href="#using-databricks-notebooks">Using Databricks Notebooks</a></li>
-        <li><a href="#scheduling-with-databricks-jobs">Scheduling with Databricks Jobs</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#quick-start-guide">Quick Start Guide</a>
-      <ul>
-        <li><a href="#1-databricks-secret-configuration">Databricks Secret Configuration</a></li>
-        <li><a href="#2-control-table-creation">Control Table Creation</a></li>
-        <li><a href="#3-run-the-implementation">Run the Implementation</a></li>
-        <li><a href="#4-monitor-and-manage">Monitor and Manage</a></li>
-      </ul>
-    </li>
-    <li><a href="#advanced-configuration">Advanced Configuration</a></li>
-    <li><a href="#troubleshooting">Troubleshooting</a></li>
-    <li><a href="#support">Support</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ol>
-</details>
+[Visit Acrux Digital](https://acruxdigital.tech) | [LinkedIn](https://www.linkedin.com/company/acruxdigital-technology) | [Report Bug](https://github.com/yourusername/repo-name/issues) | [Request Feature](https://github.com/yourusername/repo-name/issues)
+
+[![LinkedIn][linkedin-shield]][linkedin-url]
+[![MIT License][license-shield]][license-url]
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Issues][issues-shield]][issues-url]
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Prerequisites](#prerequisites)
+- [Quick Deployment with Terraform](#quick-deployment-with-terraform)
+  - [Terraform Prerequisites](#terraform-prerequisites)
+  - [Terraform Deployment](#terraform-deployment)
+  - [Terraform Outputs](#terraform-outputs)
+  - [Terraform Configuration Options](#terraform-configuration-options)
+- [Implementation Options](#implementation-options)
+  - [Generic PySpark Implementation](#generic-pyspark-implementation)
+  - [Databricks Auto Loader Implementation](#databricks-auto-loader-implementation)
+- [Running on Databricks](#running-on-databricks)
+  - [Using Databricks Notebooks](#using-databricks-notebooks)
+  - [Scheduling with Databricks Jobs](#scheduling-with-databricks-jobs)
+- [Quick Start Guide](#quick-start-guide)
+  - [1. Databricks Secret Configuration](#1-databricks-secret-configuration)
+  - [2. Control Table Creation](#2-control-table-creation)
+  - [3. Run the Implementation](#3-run-the-implementation)
+  - [4. Monitor and Manage](#4-monitor-and-manage)
+- [Advanced Configuration](#advanced-configuration)
+- [Troubleshooting](#troubleshooting)
+- [Support](#support)
+- [License](#license)
+- [Contact](#contact)
 
 ## Overview
 
@@ -81,15 +50,11 @@ This accelerator provides two different implementation options to suit different
 - **Generic PySpark Implementation** (main.py): A more portable implementation that can be adapted for different Spark platforms
 - **Databricks Auto Loader Implementation** (autoloader.py): An implementation that leverages Databricks-specific features for optimized performance
 
-<p align="right">(<a href="#top">back to top</a>)</p>
-
 ## Prerequisites
 
 - Azure Databricks workspace
 - Synapse Link for D365FO configured in your Azure environment
 - Appropriate permissions to create secrets and tables in Databricks
-
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Quick Deployment with Terraform
 
@@ -174,8 +139,6 @@ terraform apply \
   -var="external_storage_account_id=/subscriptions/your-subscription-id/resourceGroups/your-rg/providers/Microsoft.Storage/storageAccounts/your-storage"
 ```
 
-<p align="right">(<a href="#top">back to top</a>)</p>
-
 ## Implementation Options
 
 The accelerator provides two different implementation approaches to meet different requirements:
@@ -203,8 +166,6 @@ The `autoloader.py` implementation leverages Databricks-specific Auto Loader fun
 
 - Choose the Generic PySpark implementation if you need a more portable solution or plan to adapt the code for other Spark platforms
 - Choose the Databricks Auto Loader implementation if you're committed to Databricks and want to leverage its performance optimisations and Auto Loader capabilities
-
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Running on Databricks
 
@@ -307,8 +268,6 @@ This accelerator includes two YAML configuration files (`incremental_load.yaml` 
    databricks jobs run-now --job-id <job-id>
    ```
 
-<p align="right">(<a href="#top">back to top</a>)</p>
-
 ## Quick Start Guide
 
 ### 1. Databricks Secret Configuration
@@ -339,8 +298,6 @@ databricks secrets put --scope synapse_link --key client_id
 databricks secrets put --scope synapse_link --key client_secret
 ```
 
-<p align="right">(<a href="#top">back to top</a>)</p>
-
 ### 2. Control Table Creation
 
 Create a control table to manage entity configurations:
@@ -368,8 +325,6 @@ INSERT INTO d365fo_entity_control VALUES
 
 Customize the inserted entities based on your specific D365FO entities of interest.
 
-<p align="right">(<a href="#top">back to top</a>)</p>
-
 ### 3. Run the Implementation
 
 After setting up the control table, you can run either implementation:
@@ -391,15 +346,11 @@ Both implementations will:
 - Process each entity defined in the control table
 - Create or update Delta tables with the latest data
 
-<p align="right">(<a href="#top">back to top</a>)</p>
-
 ### 4. Monitor and Manage
 
 - Check the execution logs within the notebook for any errors
 - View the created Delta tables in the specified schemas
 - Monitor the scheduled jobs in the Databricks Jobs UI
-
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Advanced Configuration
 
@@ -421,8 +372,6 @@ The default schedule is based on the `refresh_frequency` column in the control t
 - `weekly`
 - `monthly`
 
-<p align="right">(<a href="#top">back to top</a>)</p>
-
 ## Troubleshooting
 
 Common issues and their solutions:
@@ -431,27 +380,19 @@ Common issues and their solutions:
 2. **Missing Entities**: Ensure the entity exists in D365FO and is enabled for Synapse Link
 3. **Processing Failures**: Check the error logs and verify entity structure matches expectations
 
-<p align="right">(<a href="#top">back to top</a>)</p>
-
 ## Support
 
 For assistance with this accelerator, please open an issue or visit [our website](https://acruxdigital.tech) for commercial enquiries. 
 
-<p align="right">(<a href="#top">back to top</a>)</p>
-
 ## License
 
 This accelerator is provided as-is under the MIT License. See `LICENSE` for more information.
-
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Contact
 
 Acrux Digital - [https://acruxdigital.tech](https://acruxdigital.tech)
 
 Project Link: [https://github.com/yourusername/repo-name](https://github.com/yourusername/repo-name)
-
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
