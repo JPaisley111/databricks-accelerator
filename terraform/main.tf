@@ -157,6 +157,7 @@ resource "azurerm_subnet" "private" {
 
 # Create a service principal in the Databricks workspace
 resource "databricks_service_principal" "this" {
+  provider      = databricks.created_workspace
   application_id = azurerm_user_assigned_identity.databricks_mi.client_id
   display_name   = var.service_principal_display_name
   
@@ -166,6 +167,7 @@ resource "databricks_service_principal" "this" {
 
 # Create a Unity Catalog metastore
 resource "databricks_metastore" "this" {
+  provider = databricks.created_workspace
   name = var.unity_catalog_name
   storage_root = "abfss://${azurerm_storage_container.unity_catalog.name}@${azurerm_storage_account.unity_catalog.name}.dfs.core.windows.net/"
   owner = "account users"
@@ -178,6 +180,7 @@ resource "databricks_metastore" "this" {
 
 # Assign the metastore to the workspace
 resource "databricks_metastore_assignment" "this" {
+  provider = databricks.created_workspace
   metastore_id = databricks_metastore.this.id
   workspace_id = azurerm_databricks_workspace.this.workspace_id
   

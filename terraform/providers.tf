@@ -32,11 +32,13 @@ provider "azurerm" {
   }
 }
 
-# Configure the Databricks provider - this is configured after workspace creation 
-# using the workspace URL and Azure AD token for authentication
+# Initial empty provider for Databricks
+provider "databricks" {}
+
+# Configure the Databricks provider with workspace after creation
 provider "databricks" {
-  host = module.databricks_workspace.workspace_url
-  azure_client_id             = azurerm_user_assigned_identity.databricks_mi.client_id
-  azure_client_secret         = azurerm_user_assigned_identity.databricks_mi.client_secret
-  azure_tenant_id             = data.azurerm_client_config.current.tenant_id
+  alias = "created_workspace"
+  host = azurerm_databricks_workspace.this.workspace_url
+  azure_client_id = azurerm_user_assigned_identity.databricks_mi.client_id
+  azure_tenant_id = data.azurerm_client_config.current.tenant_id
 }
