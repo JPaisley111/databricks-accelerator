@@ -380,19 +380,9 @@ Common issues and their solutions:
 2. **Missing Entities**: Ensure the entity exists in D365FO and is enabled for Synapse Link
 3. **Processing Failures**: Check the error logs and verify entity structure matches expectations
 
-## Support
-
-For assistance with this accelerator, please open an issue or visit [our website](https://acruxdigital.tech) for commercial enquiries. 
-
 ## License
 
 This accelerator is provided as-is under the MIT License. See `LICENSE` for more information.
-
-## Contact
-
-Acrux Digital - [https://acruxdigital.tech](https://acruxdigital.tech)
-
-Project Link: [https://github.com/JPaisley111/databricks-accelerator](https://github.com/JPaisley111/databricks-accelerator)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
